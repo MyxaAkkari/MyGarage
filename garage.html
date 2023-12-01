@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Garage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <h1>My Garage</h1>
+    <form id="carForm">
+        Owner's Name: <input id="ownerName">
+        Phone Number: <input id="phoneNumber">
+        Brand: <input id="brand">
+        Model: <input id="model">
+        Model Year: <input id="year">
+        Color: <input id="clr">
+    </form>
+    <p id="errorMessage"></p>
+    <button onclick="addaCar()">Add car</button>
+
+    <h2>Cars list</h2>
+    <div id="counter"></div><br>
+    <div id="display"></div>
+
+    <h2>Fixed Cars list</h2>
+    <div id="fixedCounter"></div><br>
+    <div id="fixedDisplay"></div>
+
+    <button id="myRemoveAllButton" `onclick="removeAll()">Remove all cars</button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
