@@ -51,4 +51,12 @@ button#myRemoveAllButton:hover {
     z-index: 9999;
     background-size: cover;
 }
+@media (max-width: 600px) {
+    input {
+        width: 100%;
+        box-sizing: border-box; /* Include padding and border in the width */
+        margin: 5px 0; /* Add margin for spacing between inputs */
+    }
 
+    /* Add more responsive styles as needed */
+}
