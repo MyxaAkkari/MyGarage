@@ -52,6 +52,9 @@ button#myRemoveAllButton:hover {
     background-size: cover;
 }
 @media (max-width: 600px) {
+    body{
+        background-image: url(assets/carGarageMobile.jpg);
+    }
     input {
         width: 100%;
         box-sizing: border-box; 
