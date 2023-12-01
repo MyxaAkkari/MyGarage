@@ -37,9 +37,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
+// func that sends the cars list items to the html
 function viewCars() {
+    // counter for how many cars in list
     counter.innerHTML = cars.length
+    // using the map loop we save the show the details from the list and add them to the html
+    // added index in order to be able to delete specfic item from list when the fixed button is called
     display.innerHTML = cars.map((car, index) => {
         return `<div>
             <img src="svgs/${carImg(car.Brand)}.svg"> | 
@@ -54,7 +57,8 @@ function viewCars() {
     }).join("")
 }
 
-
+// same as viewCars() the only deffirance is that i added a class to the div to make the scratch line across the text
+// and we will be showing the fixed cars list now
 function viewFixedCars() {
     fixedCounter.innerHTML = fixedCars.length;
     fixedDisplay.innerHTML = fixedCars.map((car) => {
@@ -70,7 +74,11 @@ function viewFixedCars() {
     }).join("")
 }
 
+// func that adds a car details to the list as a JSON
 function addaCar() {
+    // save the values from input fields to a variables in order to be able to test if they are empty before submiting them
+    // the trim() removes empty spaces from the string, so if someone filled the inputs with spaces it wont be counted as a filled input
+
     const ownerNameValue = ownerName.value.trim();
     const phoneNumberValue = phoneNumber.value.trim();
     const brandValue = brand.value.trim();
@@ -86,11 +94,12 @@ function addaCar() {
         yearValue === "" ||
         clrValue === ""
     ) {
+        // print an error messege
         document.getElementById("errorMessage").textContent =
             "All fields must be filled!";
         return;
     }
-
+    // add the car details to the array
     cars.push({
         ownerName: ownerNameValue,
         phoneNumber: phoneNumberValue,
@@ -99,12 +108,13 @@ function addaCar() {
         year: yearValue,
         Color: clrValue,
     });
-
+    // updates the view
     viewCars();
+    // reset the fileds and remove error messege
     document.getElementById("carForm").reset();
     document.getElementById("errorMessage").textContent = "";
 }
-
+// remove the fixed car from cars array and push it to fixed cars array, and update the view
 function fixCar(index) {
     const fixedCar = cars.splice(index, 1)[0]
     fixedCar.scratchedOut = true
@@ -113,12 +123,15 @@ function fixCar(index) {
     viewFixedCars();
 }
 
+// remove all cars from both arrays and updates view
 function removeAll() {
     cars = []
     fixedCars = []
     viewCars()
     viewFixedCars()
 }
+// func that we use to direct the img src in viewcar and fixedcar to the right img by using a dicitioary
+// the inputed brand will be taken and tested to see if there is a key with the same name, if true return img name
 function carImg(brand) {
     const brandIcons = {
         'mazda': 'mazda',
@@ -191,6 +204,6 @@ function carImg(brand) {
         'volvo': 'volvo'
 
     }
-
+    // return the value of the key, we lower case it incase user inputs with capital letters, if key not found, return default img
     return brandIcons[brand.toLowerCase()] || 'default'
 }
