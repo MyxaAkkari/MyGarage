@@ -1,3 +1,9 @@
+// Hide the loading screen after 2 seconds
+setTimeout(function () {
+    document.getElementById('loading-screen').style.display = 'none';
+    document.getElementById('main-content').style.display = 'flex';
+}, 3000);
+
 let cars = []
 let fixedCars = []
 
