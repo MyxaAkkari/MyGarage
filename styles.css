@@ -8,6 +8,7 @@ body {
     background-image: url(assets/carGarageOne.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
+    background-color: gray;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,7 +20,7 @@ input{
 }
 button {
     color: black;
-    padding: 10px 20px; /* Adjust padding for a larger button */
+    padding: 3px 15px; /* Adjust padding for a larger button */
     border: none;
     border-radius: 5px;
     cursor: pointer;

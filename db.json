@@ -1,0 +1,33 @@
+{
+  "cars": [
+    {
+      "ownerName": "Misha",
+      "ownerNumber": "0524463787",
+      "brand": "bmw",
+      "model": "e30",
+      "year": "1992",
+      "color": "black",
+      "id": 2
+    }
+  ],
+  "fixedCars": [
+    {
+      "ownerName": "Assad",
+      "ownerNumber": "0524367554",
+      "brand": "toyota",
+      "model": "supra",
+      "year": "1995",
+      "color": "white",
+      "id": "2"
+    },
+    {
+      "ownerName": "Eyal",
+      "ownerNumber": "052435366",
+      "brand": "Mazda",
+      "model": "rx7",
+      "year": "1998",
+      "color": "red",
+      "id": 3
+    }
+  ]
+}
